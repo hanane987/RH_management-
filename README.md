@@ -120,3 +120,22 @@ Un système complet de gestion des ressources humaines basé sur une architectur
 
 ## 🛠️ Développement
 
+## 📈 Monitoring et Logs
+
+- Logs centralisés via Winston
+- Métriques disponibles via Prometheus
+- Dashboard Grafana pour la visualisation
+
+## 🤝 Contributing
+
+1. Fork le projet
+2. Créer une branche (`git checkout -b feature/AmazingFeature`)
+3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+## 📝 License
+
+Ce projet est sous licence MIT
+
+
