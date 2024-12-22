@@ -20,3 +20,43 @@ export enum ContractType {
     CONSULTANT = 'consultant'
 }
 
+export class CreateRhDto {
+    @IsNotEmpty()
+    @IsString()
+    firstName: string;
+
+    @IsNotEmpty()
+    @IsString()
+    lastName: string;
+
+    @IsNotEmpty()
+    @IsEmail()
+    email: string;
+
+    @IsNotEmpty()
+    @IsPhoneNumber()
+    phone: string;
+
+    @IsNotEmpty()
+    @IsEnum(Gender)
+    gender: Gender;
+
+    @IsNotEmpty()
+    @IsDate()
+    @Type(() => Date)
+    birthDate: Date;
+
+    @IsNotEmpty()
+    @IsEnum(MaritalStatus)
+    maritalStatus: MaritalStatus;
+
+    @IsNotEmpty()
+    @IsEnum(ContractType)
+    contractType: ContractType;
+
+    @IsOptional()
+    @IsString()
+    address?: string;
+}
+
+export class UpdateRhDto extends PartialType(CreateRhDto) {}
