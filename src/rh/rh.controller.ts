@@ -19,3 +19,13 @@ export class RhController {
     findOne(@Param('id') id: string) {
         return this.rhService.findOne(id);
     }
+    @Put(':id')
+    update(@Param('id') id: string, @Body() updateRhDto: UpdateRhDto) {
+        return this.rhService.update(id, updateRhDto);
+    }
+
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+        return this.rhService.remove(id);
+    }
+}
