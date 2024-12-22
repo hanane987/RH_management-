@@ -1,12 +1,41 @@
 import { NestFactory } from '@nestjs/core';
+import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-  console.log(`Application is running on: http://localhost:3000`);
+
+  // Enable CORS
+  app.enableCors();
+
+  app.setGlobalPrefix('api');
+
+  // Global validation pipe
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true, 
+      transform: true, 
+      forbidNonWhitelisted: true, 
+      transformOptions: {
+        enableImplicitConversion: true, 
+      },
+    }),
+  );
+
+  const config = new DocumentBuilder()
+    .setTitle('RH Service API')
+    .setDescription('The RH service API description')
+    .setVersion('1.0')
+    .addTag('rh')
+    .addBearerAuth() 
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api/docs', app, document);
+
+  // Start the server
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
