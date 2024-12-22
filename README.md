@@ -27,4 +27,22 @@
 Un système complet de gestion des ressources humaines basé sur une architecture microservices, permettant la gestion des employés, des candidatures, et l'automatisation des processus RH.
 
 
+## 🎯 Objectifs du Projet
 
+### 1. Gestion centralisée des employés et des candidatures
+- Import des profils employés via CSV
+- Gestion des demandes internes (congés, augmentations, réclamations)
+- Interface RH pour la gestion des offres d'emploi
+- Suivi des candidatures
+
+### 2. Détection OCR
+- Analyse automatique des CV
+- Extraction des informations pertinentes des documents
+
+### 3. Sécurisation et gestion des accès
+- Authentification centralisée via Keycloak
+- Gestion des rôles (Employé, RH, Administrateur)
+
+### 4. Stockage sécurisé
+- Gestion des documents via MinIO
+- Stockage sécurisé des CV et pièces justificatives
