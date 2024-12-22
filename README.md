@@ -46,3 +46,22 @@ Un système complet de gestion des ressources humaines basé sur une architectur
 ### 4. Stockage sécurisé
 - Gestion des documents via MinIO
 - Stockage sécurisé des CV et pièces justificatives
+
+- ## 🏗️ Architecture Technique
+
+### Backend
+- **Framework Principal**: NestJS
+- **Authentification**: Keycloak
+- **OCR**: Tesseract.js
+- **Bases de données**: 
+  - MongoDB (candidatures)
+  - MySQL/PostgreSQL (données employés)
+- **Stockage**: MinIO
+
+### Frontend
+- **Framework**: Next.js
+
+### Infrastructure
+- **Conteneurisation**: Docker
+- **CI/CD**: GitHub Actions
+- **API Gateway**: NestJS Gateway
