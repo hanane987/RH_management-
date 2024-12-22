@@ -65,3 +65,58 @@ Un système complet de gestion des ressources humaines basé sur une architectur
 - **Conteneurisation**: Docker
 - **CI/CD**: GitHub Actions
 - **API Gateway**: NestJS Gateway
+
+  
+### Points d'accès principaux
+
+#### Gestion des Employés
+- `POST /api/rh/employees` - Créer un employé
+- `GET /api/rh/employees` - Liste des employés
+- `PUT /api/rh/employees/:id` - Modifier un employé
+- `DELETE /api/rh/employees/:id` - Supprimer un employé
+
+#### Gestion des Candidatures
+- `POST /api/rh/applications` - Soumettre une candidature
+- `GET /api/rh/applications` - Liste des candidatures
+- `PUT /api/rh/applications/:id` - Mettre à jour une candidature
+
+#### OCR
+- `POST /api/ocr/analyze` - Analyser un document
+
+## 👥 Rôles et Permissions
+
+### Administrateur
+- Accès complet à toutes les fonctionnalités
+- Gestion des utilisateurs et des rôles
+
+### RH
+- Gestion des employés
+- Gestion des offres d'emploi
+- Traitement des candidatures
+- Accès aux rapports
+
+### Employé
+- Consultation de son profil
+- Soumission de demandes
+- Consultation des offres internes
+
+## 🔄 Workflow
+
+1. **Import des Employés**
+   - Upload du fichier CSV
+   - Validation des données
+   - Création des profils
+
+2. **Gestion des Candidatures**
+   - Soumission du CV
+   - Analyse OCR
+   - Stockage dans MinIO
+   - Traitement par RH
+
+3. **Demandes Internes**
+   - Soumission de la demande
+   - Workflow d'approbation
+   - Notification des décisions
+
+## 🛠️ Développement
+
