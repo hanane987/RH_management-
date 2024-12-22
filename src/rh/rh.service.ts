@@ -14,3 +14,14 @@ export class RhService {
         const createdRh = new this.rhModel(createRhDto);
         return createdRh.save();
     }
+    async findAll(query: any): Promise<Rh[]> {
+        return this.rhModel.find(query).exec();
+    }
+
+    async findOne(id: string): Promise<Rh> {
+        const rh = await this.rhModel.findById(id).exec();
+        if (!rh) {
+            throw new NotFoundException(`RH with ID ${id} not found`);
+        }
+        return rh;
+    }
