@@ -25,3 +25,21 @@ export class RhService {
         }
         return rh;
     }
+    async update(id: string, updateRhDto: UpdateRhDto): Promise<Rh> {
+        const updatedRh = await this.rhModel
+            .findByIdAndUpdate(id, updateRhDto, { new: true })
+            .exec();
+        if (!updatedRh) {
+            throw new NotFoundException(`RH with ID ${id} not found`);
+        }
+        return updatedRh;
+    }
+
+    async remove(id: string): Promise<Rh> {
+        const deletedRh = await this.rhModel.findByIdAndDelete(id).exec();
+        if (!deletedRh) {
+            throw new NotFoundException(`RH with ID ${id} not found`);
+        }
+        return deletedRh;
+    }
+}
