@@ -18,3 +18,18 @@ export class Rh extends Document {
 
     @Prop({ required: true, enum: Gender })
     gender: Gender;
+
+    @Prop({ required: true })
+    birthDate: Date;
+
+    @Prop({ required: true, enum: MaritalStatus })
+    maritalStatus: MaritalStatus;
+
+    @Prop({ required: true, enum: ContractType })
+    contractType: ContractType;
+
+    @Prop()
+    address: string;
+}
+
+export const RhSchema = SchemaFactory.createForClass(Rh);
