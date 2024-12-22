@@ -10,3 +10,12 @@ export class RhController {
     create(@Body() createRhDto: CreateRhDto) {
         return this.rhService.create(createRhDto);
     }
+    @Get()
+    findAll(@Query() query: any) {
+        return this.rhService.findAll(query);
+    }
+
+    @Get(':id')
+    findOne(@Param('id') id: string) {
+        return this.rhService.findOne(id);
+    }
