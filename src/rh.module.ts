@@ -9,6 +9,7 @@ import { Rh, RhSchema } from './schemas/rh.schema';
         MongooseModule.forFeature([{ name: Rh.name, schema: RhSchema }])
     ],
     controllers: [RhController],
-  
+    providers: [RhService],
+    exports: [RhService]
 })
 export class RhModule {}
