@@ -126,6 +126,16 @@ Un système complet de gestion des ressources humaines basé sur une architectur
 - Métriques disponibles via Prometheus
 - Dashboard Grafana pour la visualisation
 
+  ****
+  ## 📋 Prérequis
+
+- Node.js (v14+)
+- Docker et Docker Compose
+- MongoDB
+- MySQL/PostgreSQL
+- MinIO Server
+- Keycloak Server
+
 ## 🤝 Contributing
 
 1. Fork le projet
